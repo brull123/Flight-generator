@@ -1,0 +1,26 @@
+{
+    "B737": {
+        "pax": 148,
+        "range": "medium"
+    },
+    "B787":{
+        "pax": 390,
+        "range": "long"
+    },
+    "B747":{
+        "pax": 467,
+        "range": "long"
+    },
+    "A330":{
+        "pax": 460,
+        "range": "long" 
+    },
+    "A320": {
+        "pax": 186,
+        "range": "medium"
+    },
+    "BAE146": {
+        "pax": 80,
+        "range": "short"
+    }
+}

@@ -1,0 +1,140 @@
+Istanbul Airport|Turkey|LTFM|41°15′44″N|28°43′40″E|
+Sheremetyevo International Airport|Russia|UUEE|55°58′22″N|37°24′53″E|
+Charles de Gaulle Airport|France|LFPG|49°00′35″N|002°32′52″E|
+Amsterdam Airport Schiphol|Netherlands|EHAM|52°18′00″N|4°45′54″E|
+Domodedovo International Airport|Russia|UUDD|55°24′31″N|37°54′22″E|
+Frankfurt am Main Airport|Germany|EDDF|50°02′00″N|008°34′14″E|
+Adolfo Suárez Madrid–Barajas Airport|Spain|LEMD|40°28′20″N|003°33′39″W|
+Heathrow Airport|United Kingdom|EGLL|51°28′39″N|000°27′41″W|
+Josep Tarradellas Barcelona–El Prat Airport|Spain|LEBL|41°17′49″N|002°04′42″E|
+Pulkovo Airport|Russia|ULLI|59°48′01″N|30°15′45″E|
+Vnukovo International Airport|Russia|UUWW|55°35′46″N|37°16′03″E|
+Orly Airport|France|LFPO|48°43′24″N|02°22′46″E|
+Palma de Mallorca Airport|Spain|LEPA|39°33′06″N|002°44′20″E|
+Munich Airport|Germany|EDDM|48°21′14″N|011°47′10″E|
+Athens International Airport|Greece|LGAV|37°56′11″N|23°56′50″E|
+Lisbon Airport|Portugal|LPPT|38°46′27″N|009°08′03″W|
+Leonardo da Vinci–Fiumicino Airport|Italy|LIRF|41°48′01″N|012°14′20″E|
+Vienna International Airport|Austria|LOWW|48°06′39″N|016°34′15″E|
+Zurich Airport|Switzerland|LSZH|47°27′53″N|008°32′57″E|
+Berlin Brandenburg Airport|Germany|EDDB|52°22′00″N|013°30′12″E|
+Malpensa Airport|Italy|LIMC|45°37′48″N|8°43′23″E|
+Boryspil International Airport|Ukraine|UKBB|50°20′41″N|30°53′36″E|
+Oslo Airport, Gardermoen|Norway|ENGM|60°12′10″N|011°05′02″E|
+Brussels Airport|Belgium|EBBR|50°54′05″N|004°29′04″E|
+Copenhagen Airport|Denmark|EKCH|55°37′05″N|012°39′22″E|
+Málaga Airport|Spain|LEMG|36°40′30″N|004°29′57″W|
+Dublin Airport|Ireland|EIDW|53°25′17″N|006°16′12″W|
+Düsseldorf Airport|Germany|EDDL|51°17′22″N|006°46′00″E|
+Stockholm Arlanda Airport|Sweden|ESSA|59°39′07″N|017°55′07″E|
+Warsaw Chopin Airport|Poland|EPWA|52°09′57″N|20°58′02″E|
+London Stansted Airport|United Kingdom|EGSS|51°53′06″N|000°14′06″E|
+Henri Coandă International Airport|Romania|LROP|44°34′16″N|26°05′06″E|
+Simferopol International Airport|Russia|UKFF|45°03′07″N|33°58′25″E|
+Nice Côte d'Azur Airport|France|LFMN|43°39′55″N|007°12′54″E|
+Orio al Serio International Airport|Italy|LIME|45°40′08″N|009°42′01″E|
+Gatwick Airport|United Kingdom|EGKK|51°08′53″N|000°11′25″W|
+Catania-Fontanarossa Airport|Italy|LICC|37°28′00″N|15°03′50″E|
+Manchester Airport|United Kingdom|EGCC|53°21′14″N|002°16′30″W|
+Geneva Airport|Switzerland|LSGG|46°14′15″N|6°06′33″E|
+Porto Airport|Portugal|LPPR|41°14′08″N|008°40′41″W|
+Alicante Airport|Spain|LEAL|38°16′56″N|00°33′29″W|
+Hamburg Airport|Germany|EDDH|53°37′49″N|009°59′28″E|
+Heraklion International Airport|Greece|LGIR|35°20′23″N|25°10′49″E|
+Krasnodar International Airport|Russia|URKK|45°02′05″N|39°10′14″E|
+Ibiza Airport|Spain|LEIB|38°52′22″N|01°22′33″E|
+Luton Airport|United Kingdom|EGGW|51°52′29″N|000°22′06″W|
+Marseille Provence Airport|France|LFML|43°26′12″N|05°12′54″E|
+Naples Airport|Italy|LIRN|40°53′04″N|014°17′27″E|
+Budapest Ferenc Liszt International Airport|Hungary|LHBP|47°26′22″N|019°15′43″E|
+Falcone–Borsellino Airport|Italy|LICJ|38°10′55″N|013°05′58″E|
+Lyon–Saint-Exupéry Airport|France|LFLL|45°43′32″N|005°04′52″E|
+Václav Havel Airport Prague|Czech Republic|LKPR|050°6′7″N|14°15′48″E|
+Linate Airport|Italy|LIML|45°26′58″N|009°16′42″E|
+Helsinki Airport|Finland|EFHK|60°19′02″N|024°57′48″E|
+Cologne Bonn Airport|Germany|EDDK|50°51′57″N|007°08′34″E|
+Bologna Guglielmo Marconi Airport|Italy|LIPE|44°32′07.6″N|11°17′19.2″E|
+Valencia Airport|Spain|LEVC|39°29′22″N|00°28′54″W|
+Ufa International Airport|Russia|UWUU|54°33′49″N|055°52′49″E|
+Khrabrovo Airport|Russia|UMKK|54°53′24″N|20°35′33″E|
+Kazan International Airport|Russia|UWKD|55°36′24″N|049°16′54″E|
+Toulouse–Blagnac Airport|France|LFBO|43°38′06″N|001°22′04″E|
+Brussels South Charleroi Airport|Belgium|EBCI|50°27′36″N|004°27′10″E|
+EuroAirport Basel Mulhouse Freiburg|France|LFSB|47°35′24″N|007°31′45″E|
+Stuttgart Airport|Germany|EDDS|48°41′24″N|009°13′19″E|
+Thessaloniki Airport "Macedonia"|Greece|LGTS|40°31′11″N|22°58′15″E|
+Seville Airport|Spain|LEZL|37°25′05″N|005°53′56″W|
+Venice Marco Polo Airport|Italy|LIPZ|45°30′19″N|012°21′07″E|
+Rhodes International Airport|Greece|LGRP|36°24′19.51″N|28°05′10.29″E|
+Sofia Airport|Bulgaria|LBSF|42°41′42″N|023°24′30″E|
+Nantes Atlantique Airport|France|LFRS|47°09′25″N|001°36′28″W|
+Belgrade Nikola Tesla Airport|Serbia|LYBE|44°49′10″N|20°18′25″E|
+Bergen Airport, Flesland|Norway|ENBR|60°17′37″N|005°13′05″E|
+Faro Airport|Portugal|LPFR|37°00′52″N|007°57′57″W|
+Mineralnye Vody Airport|Russia|URMM|44°13′30″N|043°04′55″E|
+Kraków John Paul II International Airport|Poland|EPKK|50°04′40″N|019°47′05″E|
+Bordeaux–Mérignac Airport|France|LFBD|44°49′42″N|000°42′56″W|
+Edinburgh Airport|United Kingdom|EGPH|55°57′00″N|003°22′21″W|
+Kurumoch International Airport|Russia|UWWW|53°30′6″N|050°9′18″E|
+Anapa Airport|Russia|URKA|45°00′07.5″N|37°20′50.3″E|
+Tirana Airport|Albania|LATI|41°24′53″N|19°43′14″E|
+Platov International Airport|Russia|URRP|47°29′38″N|039°55′29″E|
+Cagliari Elmas Airport|Italy|LIEE|39°15′05.29″N|09°03′15.42″E|
+Eindhoven Airport|Netherlands|EHEH|51°27′00″N|005°22′28″E|
+Bilbao Airport|Spain|LEBB|43°18′04″N|02°54′38″W|
+Malta International Airport|Malta|LMML|35°51′27″N|014°28′39″E|
+Minsk National Airport|Belarus|UMMS|53°52′57″N|28°01′57″E|
+Birmingham Airport|United Kingdom|EGBB|52°27′14″N|001°44′53″W|
+Riga International Airport|Latvia|EVRA|56°55′25″N|023°58′16″E|
+Katowice Airport|Poland|EPKT|50°28′27″N|019°04′48″E|
+Belfast International Airport|United Kingdom|EGAA|54°39′27″N|006°12′57″W|
+Ciampino Airport|Italy|LIRA|41°47′58″N|012°35′50″E|
+Corfu International Airport|Greece|LGKR|39°36′07″N|19°54′42″E|
+Pristina International Airport||BKPR|42°34′22″N|021°02′09″E|
+Keflavík International Airport||BIKF|63°59′06″N|22°36′20″W|
+Gdańsk Lech Wałęsa Airport|Poland|EPGD|54°22′39″N|018°27′58″E|
+Bristol Airport|United Kingdom|EGGD|51°22′58″N|002°43′09″W|
+Olbia Costa Smeralda Airport|Italy|LIEO|40°53′09″N|09°31′01″E|
+Beauvais–Tillé Airport|France|LFOB|49°27′16″N|02°06′46″E|
+Glasgow Airport|United Kingdom|EGPF|55°52′19″N|004°25′59″W|
+Turin Airport|Italy|LIMF|45°12′09″N|007°38′58″E|
+Trondheim Airport Værnes|Norway|ENVA|63°27′27″N|010°55′27″E|
+Berlin Tegel Airport|Germany|EDDT|52°33′35″N|013°17′16″E|
+Berlin Schönefeld Airport|Germany|EDDB, ETBS|52°22′43″N|013°31′14″E|
+Bari Airport|Italy|LIBD|41°08′19.88″N|16°45′38.14″E|
+Stavanger Airport Sola|Norway|ENZV|58°52′36″N|005°38′16″E|
+Göteborg Landvetter Airport|Sweden|ESGG|57°39′36″N|012°17′28″E|
+Langenhagen Airport|Germany|EDDV|52°27′39″N|009°41′06″E|
+Luxembourg Airport|Luxembourg|ELLX|49°37′24″N|006°12′16″E|
+Istanbul Atatürk Airport|Turkey|LTBA|40°58′34″N|028°48′51″E|
+Keflavík International Airport|Iceland|BIKF|63°59′06″N|22°36′20″W|
+Galileo Galilei Airport|Italy|LIRP|43°41′02″N|010°23′33″E|
+Newcastle Airport|United Kingdom|EGNT|55°02′17″N|001°41′23″W|
+London City Airport|United Kingdom|EGLC|51°30′19″N|000°03′19″E|
+Vilnius Airport|Lithuania|EYVI|54°38′13″N|025°17′16″E|
+Liverpool John Lennon Airport|United Kingdom|EGGP|53°20′01″N|2°50′59″W|
+East Midlands Airport|United Kingdom|EGNX|52°50′0″N|001°20′0″W|
+Barcelona–El Prat Josep Tarradellas Airport|Spain|LEBL|41°17′49″N|002°04′42″E|
+Oslo Airport|Norway|ENGM|60°12′10″N|011°05′02″E|
+Bordeaux – Mérignac Airport|France|LFBD|44°49′42″N|000°42′56″W|
+Nuremberg Airport|Germany|EDDN|49°29′55″N|011°04′41″E|
+San Pablo Airport|Spain|LEZL|37°25′05″N|005°53′56″W|
+Leeds Bradford Airport|United Kingdom|EGNM|53°51′58″N|001°39′39″W|
+Frankfurt Airport|Germany|EDDF|50°02′00″N|008°34′14″E|
+Thessaloniki International Airport, "Macedonia"|Greece|LGTS|40°31′11″N|22°58′15″E|
+Rome Ciampino Airport|Italy|LIRA|41°47′58″N|012°35′50″E|
+John Paul II International Airport Kraków–Balice|Poland|EPKK|50°04′40″N|019°47′05″E|
+Trondheim Airport|Norway|ENVA|63°27′27″N|010°55′27″E|
+Stavanger Airport|Norway|ENZV|58°52′36″N|005°38′16″E|
+Beauvais Airport|France|LFOB|49°27′16″N|02°06′46″E|
+Cagliari Airport|Italy|LIEE|39°15′05.29″N|09°03′15.42″E|
+Innsbruck Airport|Austria|LOWI|47°15′37″N|011°20′38″E|
+Zakynthos International Airport|Greece|LGZA|37°45′03″N|20°53′03″E|
+Santorini International Airport|Greece|LGSR|36°23′57″N|25°28′46″E|
+Skiathos International Airport|Greece|LGSK|39°10′39″N|023°30′13.23″E|
+Thessaloniki Airport|Greece|LGTS|40°31′11″N|22°58′15″E|
+Svalbard Airport|Norway|ENSB|78°14′46″N|015°27′56″E|
+Madeira Airport|Portugal|LPMA|32°41′39″N|16°46′41″W|
+Gibraltar International Airport|Gibraltar|LXGB|36°09′04″N|005°20′59″W|
+Akureyri Airport|Iceland|BIAR|65°39′40″N|18°04′20″W|
+Genoa Cristoforo Colombo Airport|Italy|LIMJ|44°24′48″N|008°50′15″E|
