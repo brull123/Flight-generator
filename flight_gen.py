@@ -12,30 +12,6 @@ short_plane_max_distance = 100
 medium_plane_max_distance = 600
 
 
-def load_airports():
-    airport_filename = "airports.txt"
-    airport_arr = []
-    encoded_airports_list = []
-    f = codecs.open(airport_filename, "r", "utf-8")
-    for i in f:
-        airport_attributes = i.split("|")
-        name = airport_attributes[0].strip()
-        country = airport_attributes[1].strip()
-        air_icao = airport_attributes[2].strip()
-        air_lat = airport_attributes[3].strip()
-        air_lon = airport_attributes[4].strip()
-        tmp_air = Airport(name, country, air_icao, air_lat, air_lon)
-        airport_arr.append(tmp_air)
-        encoded_airports_list.append(tmp_air.encode_airport())
-        # print(name, country, air_icao, sep=", ")
-    f.close()
-    airports_json = json.dumps(encoded_airports_list, indent=4)
-    g = codecs.open("airports.json", "w", "utf-8")
-    g.write(airports_json)
-    g.close()
-    return airport_arr
-
-
 def load_airports_from_json():
     airports_list = []
     airports_filename = "airports.json"
@@ -145,13 +121,16 @@ def generate(airport_list):
     if dep is None and arr is None:
         idx_dep = random.randint(0, len(airport_list)-1)
         dep = airport_list[idx_dep]
-        arr = dep.find_suitable_airport(airport_list, min_distance, max_distance)
+        arr = dep.find_suitable_airport(
+            airport_list, min_distance, max_distance)
 
     elif arr is None:
-        arr = dep.find_suitable_airport(airport_list, min_distance, max_distance)
+        arr = dep.find_suitable_airport(
+            airport_list, min_distance, max_distance)
 
     elif dep is None:
-        dep = arr.find_suitable_airport(airport_list, min_distance, max_distance)
+        dep = arr.find_suitable_airport(
+            airport_list, min_distance, max_distance)
 
     dist = dep.distance_to(arr)
     print("Departure: ", end="")
