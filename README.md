@@ -5,6 +5,6 @@ To generate a flight simply run flight_gen.py.
 
 
 <h1>Options</h1>
-The program offers several options:
-To set departure airport add --dep="DEPARTURE_AIRPORT_ICAO"
-To set arrival airport add --arr="ARRIVAL_AIRPORT_ICAO"
+The program offers several options:<br>
+To set departure airport add --dep="DEPARTURE_AIRPORT_ICAO"<br>
+To set arrival airport add --arr="ARRIVAL_AIRPORT_ICAO"<br>
