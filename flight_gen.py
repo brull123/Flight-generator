@@ -1,29 +1,21 @@
 # All airports information has been acquired from https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_Europe
 
 import json
-from turtle import distance
-import xlrd
 import random
 import codecs
 import math
 import sys
 
-max_distance = 300
+max_distance = None
 min_distance = None
 short_plane_max_distance = 100
 medium_plane_max_distance = 600
 
 
-filename = "Airports.xls"
-wb = xlrd.open_workbook(filename)
-sheet = wb.sheet_by_index(0)
-rows = sheet.nrows
-
-airport_filename = "airports.txt"
-airport_arr = []
-
-
 def load_airports():
+    airport_filename = "airports.txt"
+    airport_arr = []
+    encoded_airports_list = []
     f = codecs.open(airport_filename, "r", "utf-8")
     for i in f:
         airport_attributes = i.split("|")
@@ -34,8 +26,28 @@ def load_airports():
         air_lon = airport_attributes[4].strip()
         tmp_air = Airport(name, country, air_icao, air_lat, air_lon)
         airport_arr.append(tmp_air)
+        encoded_airports_list.append(tmp_air.encode_airport())
         # print(name, country, air_icao, sep=", ")
     f.close()
+    airports_json = json.dumps(encoded_airports_list, indent=4)
+    g = codecs.open("airports.json", "w", "utf-8")
+    g.write(airports_json)
+    g.close()
+    return airport_arr
+
+
+def load_airports_from_json():
+    airports_list = []
+    airports_filename = "airports.json"
+    f = codecs.open(airports_filename, "r", "utf-8")
+    airports_dict_list = json.loads(f.read())
+    f.close()
+    for i in airports_dict_list:
+        tmp_airport = Airport()
+        tmp_airport.decode_airport(i)
+        airports_list.append(tmp_airport)
+
+    return airports_list
 
 
 class Airport:
@@ -43,8 +55,8 @@ class Airport:
         self.name = name
         self.country = country
         self.ICAO = ICAO
-        self.lat = coords_to_number(lat)
-        self.lon = coords_to_number(lon)
+        self.lat = coords_to_number(lat) if lat is not None else None
+        self.lon = coords_to_number(lon) if lon is not None else None
 
     def __repr__(self):
         lat_sign = "N" if self.lat >= 0 else "S"
@@ -72,9 +84,16 @@ class Airport:
         return d
 
     def encode_airport(self):
-        return {"name": self.name, "country": self.country, "ICAO": self.ICAO, "lat": self.lat, "lon": self.lat}
+        return {"name": self.name, "country": self.country, "ICAO": self.ICAO, "lat": self.lat, "lon": self.lon}
 
-    def find_suitable_airport(self, airport_list):
+    def decode_airport(self, airport_dict):
+        self.name = airport_dict["name"]
+        self.country = airport_dict["country"]
+        self.ICAO = airport_dict["ICAO"]
+        self.lat = airport_dict["lat"]
+        self.lon = airport_dict["lon"]
+
+    def find_suitable_airport(self, airport_list, min_distance, max_distance):
         airport_idx = random.randint(0, len(airport_list)-1)
         airport_2 = airport_list[airport_idx]
 
@@ -94,6 +113,8 @@ class Airport:
 def generate(airport_list):
     dep = None
     arr = None
+    min_distance = None
+    max_distance = None
 
     for i in sys.argv:
         if "--dep" in i:
@@ -111,16 +132,26 @@ def generate(airport_list):
                     arr = j
                     break
 
+    for i in sys.argv:
+        if "--min_dist" in i:
+            min_distance = int(i.split("=")[-1].strip())
+            break
+
+    for i in sys.argv:
+        if "--max_dist" in i:
+            max_distance = int(i.split("=")[-1].strip())
+            break
+
     if dep is None and arr is None:
         idx_dep = random.randint(0, len(airport_list)-1)
         dep = airport_list[idx_dep]
-        arr = dep.find_suitable_airport(airport_list)
+        arr = dep.find_suitable_airport(airport_list, min_distance, max_distance)
 
     elif arr is None:
-        arr = dep.find_suitable_airport(airport_list)
+        arr = dep.find_suitable_airport(airport_list, min_distance, max_distance)
 
     elif dep is None:
-        dep = arr.find_suitable_airport(airport_list)
+        dep = arr.find_suitable_airport(airport_list, min_distance, max_distance)
 
     dist = dep.distance_to(arr)
     print("Departure: ", end="")
@@ -150,12 +181,12 @@ def generate_pax(plane, planes_list):
             max_pax = i[-1]["pax"]
             break
     pax = random.randint((max_pax * pax_lower_limit_numerator) //
-                            pax_lower_limit_denominator, max_pax)
+                         pax_lower_limit_denominator, max_pax)
 
     return pax
 
 
-def generate_plane(distance = None):
+def generate_plane(distance=None):
     plane = None
 
     with codecs.open("airplanes.json") as f:
@@ -189,10 +220,12 @@ def generate_plane(distance = None):
     print("Plane:", plane)
     print("Passengers:", pax)
 
+
 def find_plane_in_list(plane, planes_list):
     for i in planes_list:
         if i[0] == plane:
             return i
+
 
 def coords_to_number(coord):
     if "S" in coord or "W" in coord:
@@ -209,8 +242,8 @@ def coords_to_number(coord):
     return coord_number
 
 
-load_airports()
-dep, arr, dist = generate(airport_arr)
+airport_list = load_airports_from_json()
+dep, arr, dist = generate(airport_list)
 dep_country = dep.country
 arr_country = arr.country
 generate_airline(dep_country, arr_country)

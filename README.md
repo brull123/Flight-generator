@@ -8,9 +8,11 @@ To generate a flight simply run flight_gen.py.
 
 <h2>Options</h2>
 The program offers several options:<br>
-To set departure airport add --dep="DEPARTURE_AIRPORT_ICAO"<br>
-To set arrival airport add --arr="ARRIVAL_AIRPORT_ICAO"<br>
+To set departure manually airport add --dep="DEPARTURE_AIRPORT_ICAO"<br>
+To set arrival manually airport add --arr="ARRIVAL_AIRPORT_ICAO"<br>
 To set airplane manually add --plane="AIRPLANE_CODE"<br>
+To set maximum distance manually add --max_dist="MAX_DISTANCE"<br>
+To set minimum distance manually add --min_dist="MIN_DISTANCE"<br>
 All available airplanes and airports are in airplanes.json and airports.txt, airports.json is currently non functional<br>
 
 Simple flight generator for simulation use only. Currently works for major airports in Europe only.
