@@ -1,0 +1,30 @@
+{
+  "name": "flight_generator",
+  "version": "1.0.0",
+  "description": "Simple flight generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brull123/Flight-generator.git"
+  },
+  "keywords": [
+    "flight",
+    "simulator",
+    "flightsim",
+    "msfs",
+    "generator"
+  ],
+  "author": "Marek Broul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brull123/Flight-generator/issues"
+  },
+  "homepage": "https://github.com/brull123/Flight-generator#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
