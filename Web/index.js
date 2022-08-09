@@ -16,18 +16,29 @@ app.use(express.json());
 app.post("/api", (request, response) => {
     console.log("I got a request");
     const data = request.body;
+    console.log(data);
 
     dep = data.dep != "" ? data.dep : null;
     arr = data.arr != "" ? data.arr : null;
     plane = data.plane != "" ? data.plane : null;
     min_dist = data.min_dist != "" ? data.min_dist : null;
     max_dist = data.max_dist != "" ? data.max_dist : null;
-    
+    airline = null;
+    pax = null;
+    distance = null;    
+
+
     var data_array = [dep, arr, plane, min_dist, max_dist];
     for (i in data_array){
         console.log(data_array[i]);
     }
     response.json({
+        "dep":dep,
+        "arr":arr,
+        "plane":plane,
+        "airline":airline,
+        "pax":pax,
+        "dist":distance,
         "status":"success"
     })
 });

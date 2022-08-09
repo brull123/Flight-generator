@@ -1,23 +1,39 @@
-var counter = 0;
-const dep = document.getElementById("dep");
-const arr = document.getElementById("arr");
-const plane = document.getElementById("plane");
-const min_dist = document.getElementById("min_dist");
-const max_dist = document.getElementById("max_dist");
+async function request_flight() {
+    const dep_element = document.getElementById("dep");
+    const arr_element = document.getElementById("arr");
+    const plane_element = document.getElementById("plane");
+    const min_dist_element = document.getElementById("min_dist");
+    const max_dist_element = document.getElementById("max_dist");
 
-function request_flight() {
     console.log("Requesting flight");
-    const dep_value = dep.value;
-    const arr_value = arr.value;
-    const plane_value = plane.value;
-    const min_dist_value = min_dist.value;
-    const max_dist_value = max_dist.value;
-    const data = {dep_value, arr_value, plane_value, min_dist_value, max_dist_value};
+
+    const dep = dep_element.value != "" ? dep_element.value : "null";
+    const arr = arr_element.value != "" ? arr_element.value : "null";
+    const plane = plane_element.value != "" ? plane_element.value : "null";
+    const min_dist = min_dist_element.value != "" ? min_dist_element.value : "null";
+    const max_dist = max_dist_element.value != "" ? max_dist_element.value : "null";
+
+    var data = { dep, arr, plane, min_dist, max_dist };
+
     const options = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+        // body: JSON.stringify(data)
     }
-    counter++;
-    fetch("/api", options);
+    const base_url = "http://127.0.0.1:5000/";
+    const api_url = `${base_url}api/${dep}/${arr}/${plane}/${min_dist}/${max_dist}`;
+    console.log(api_url);
+
+    // fetch("/api", options).then((response) => response.json()).then((data) => console.log(data));
+    // fetch(api_url).then((response) => response.json()).then((data_received) => console.log(data_received));
+    const response = await fetch(api_url);
+    var data_response = await response.json();
+
+    console.log(data_response);
+    document.getElementById("result-dep").innerHTML = data_response.departure;
+    document.getElementById("result-arr").innerHTML = data_response.arrival;
+    document.getElementById("result-airline").innerHTML = data_response.airline;
+    document.getElementById("result-plane").innerHTML = data_response.airplane;
+    document.getElementById("result-pax").innerHTML = data_response.pax;
+    document.getElementById("result-dist").innerHTML = data_response.dist;
 }
