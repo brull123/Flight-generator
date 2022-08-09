@@ -126,13 +126,11 @@ def generate_airline(departure, arrival):
 
 
 def generate_pax(plane, planes_list):
-    print(planes_list)
     pax_lower_limit_numerator = 2
     pax_lower_limit_denominator = 3
     pax = None
 
     for i in planes_list:
-        print(i)
         if plane in i:
             max_pax = i[-1]["pax"]
             break
