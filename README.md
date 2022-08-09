@@ -20,4 +20,8 @@ All available airplanes and airports are in airplanes.json and airports.json.<br
 I am now currently working on a website version of the generator.<br>
 Website version already has the same functionality, however it needs more polishing.
 
+<br>
+<br>
+<br>
+
 Simple flight generator for simulation use only. Currently works for major airports in Europe only.
