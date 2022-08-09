@@ -8,7 +8,7 @@ CORS(app)
 api = Api(app)
 
 
-class Hello(Resource):
+class Generator(Resource):
     def get(self, dep, arr, plane, min_dist, max_dist):
         input_data = [dep, arr, plane, min_dist, max_dist]
         for i in range(len(input_data)):
@@ -22,7 +22,7 @@ class Hello(Resource):
 
 
 api.add_resource(
-    Hello, "/api/<string:dep>/<string:arr>/<string:plane>/<string:min_dist>/<string:max_dist>")
+    Generator, "/api/<string:dep>/<string:arr>/<string:plane>/<string:min_dist>/<string:max_dist>")
 
 if __name__ == "__main__":
     app.run(debug=True)
