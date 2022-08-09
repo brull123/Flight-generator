@@ -24,16 +24,14 @@ async function request_flight() {
     const api_url = `${base_url}api/${dep}/${arr}/${plane}/${min_dist}/${max_dist}`;
     console.log(api_url);
 
-    // fetch("/api", options).then((response) => response.json()).then((data) => console.log(data));
-    // fetch(api_url).then((response) => response.json()).then((data_received) => console.log(data_received));
     const response = await fetch(api_url);
     var data_response = await response.json();
 
     console.log(data_response);
-    document.getElementById("result-dep").innerHTML = data_response.departure;
-    document.getElementById("result-arr").innerHTML = data_response.arrival;
+    document.getElementById("result-dep").innerHTML = data_response.dep;
+    document.getElementById("result-arr").innerHTML = data_response.arr;
     document.getElementById("result-airline").innerHTML = data_response.airline;
-    document.getElementById("result-plane").innerHTML = data_response.airplane;
+    document.getElementById("result-plane").innerHTML = data_response.plane;
     document.getElementById("result-pax").innerHTML = data_response.pax;
     document.getElementById("result-dist").innerHTML = data_response.dist;
 }

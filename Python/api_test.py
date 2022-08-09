@@ -10,15 +10,14 @@ api = Api(app)
 
 class Hello(Resource):
     def get(self, dep, arr, plane, min_dist, max_dist):
-        flight_data = generate_whole_flight_from_json(dep, arr, plane, min_dist, max_dist)
-        print(flight_data)
-        message = {"departure": dep,
-                   "arrival": arr,
-                   "airplane": plane,
-                   "airline": "Aegean",
-                   "pax": 138,
-                   "dist":400
-                   }
+        input_data = [dep, arr, plane, min_dist, max_dist]
+        for i in range(len(input_data)):
+            if input_data[i] == "null":
+                input_data[i] = None
+
+        flight_data = generate_whole_flight_from_json(input_data)
+        message = flight_data
+        print(message)
         return message
 
 
