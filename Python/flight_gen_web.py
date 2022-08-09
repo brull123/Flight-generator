@@ -2,12 +2,10 @@
 # All airports information has been acquired from https://en.wikipedia.org/wiki/List_of_the_busiest_airports_in_Europe
 
 import json
-from plistlib import load
+from os import stat
 import random
 import codecs
 import math
-import sys
-from tkinter.messagebox import NO
 
 max_distance = None
 min_distance = None
@@ -93,6 +91,7 @@ class Airport:
 
 def generate(dep=None, arr=None, min_distance=None, max_distance=None):
     airport_list, airport_dict = load_airports_from_json()
+    status = "ok"
 
     if dep == None and arr == None:
         idx_dep = random.randint(0, len(airport_list)-1)
@@ -101,20 +100,39 @@ def generate(dep=None, arr=None, min_distance=None, max_distance=None):
             airport_list, min_distance, max_distance)
 
     elif arr == None:
-        dep = airport_dict[dep]
+        try:
+            dep = airport_dict[dep]
+        except:
+            status = "error-dep"
+            return None, None, None, status
+
         arr = dep.find_suitable_airport(
             airport_list, min_distance, max_distance)
 
     elif dep == None:
-        arr = airport_dict[arr]
+        try:
+            arr = airport_dict[arr]
+        except:
+            status = "error-arr"
+            return None, None, None, status
+
         dep = arr.find_suitable_airport(
             airport_list, min_distance, max_distance)
     else:
-        arr = airport_dict[arr]
-        dep = airport_dict[dep]
+        try:
+            dep = airport_dict[dep]
+        except:
+            status = "error-dep"
+            return None, None, None, status
+
+        try:
+            arr = airport_dict[arr]
+        except:
+            status = "error-arr"
+            return None, None, None, status
 
     dist = dep.distance_to(arr)
-    return dep, arr, dist
+    return dep, arr, dist, status
 
 
 def generate_airline(departure, arrival):
@@ -125,15 +143,12 @@ def generate_airline(departure, arrival):
     return airline
 
 
-def generate_pax(plane, planes_list):
+def generate_pax(plane):
     pax_lower_limit_numerator = 2
     pax_lower_limit_denominator = 3
     pax = None
 
-    for i in planes_list:
-        if plane in i:
-            max_pax = i[-1]["pax"]
-            break
+    max_pax = plane[1]["pax"]
 
     pax = random.randint((max_pax * pax_lower_limit_numerator) //
                          pax_lower_limit_denominator, max_pax)
@@ -142,7 +157,7 @@ def generate_pax(plane, planes_list):
 
 
 def generate_plane(distance=None, plane=None):
-
+    status = "ok"
     with codecs.open("airplanes.json") as f:
         data = json.load(f)
     planes_list = []
@@ -151,14 +166,23 @@ def generate_plane(distance=None, plane=None):
         planes_list.append([i, data[i]])
 
     if plane is not None:
+        found = False
         for i in planes_list:
-            if i == plane:
-                plane = i.split("=")[-1]
+            print(i[0])
+            if i[0] == plane:
+                plane = i
+                print(plane)
+                found = True
                 break
 
+        if not found:
+            status = "error-plane"
+            print(status)
+            return None, None, status
+
     if plane is None:
-        plane = planes_list[random.randint(0, len(planes_list)-1)][0]
-        plane_all = find_plane_in_list(plane, planes_list)
+        plane = planes_list[random.randint(0, len(planes_list)-1)]
+        plane_all = find_plane_in_list(plane[0], planes_list)
         desired_range = None
         if distance < short_plane_max_distance:
             desired_range = "short"
@@ -168,11 +192,12 @@ def generate_plane(distance=None, plane=None):
             desired_range = "long"
 
         while plane_all[-1]["range"] != desired_range:
-            plane = planes_list[random.randint(0, len(planes_list)-1)][0]
-            plane_all = find_plane_in_list(plane, planes_list)
+            plane = planes_list[random.randint(0, len(planes_list)-1)]
+            plane_all = find_plane_in_list(plane[0], planes_list)
+        
 
-    pax = generate_pax(plane, planes_list)
-    return plane, pax
+    pax = generate_pax(plane)
+    return plane[0], pax, status
 
 
 def find_plane_in_list(plane, planes_list):
@@ -197,17 +222,40 @@ def coords_to_number(coord):
 
 
 def generate_whole_flight_from_json(input_data):
+    status = "ok"
     dep, arr, plane, min_dist, max_dist = input_data
-    if min_dist is not None:
-        min_dist = int(min_dist)
-    if max_dist is not None:
-        max_dist = int(max_dist)
 
-    dep, arr, dist = generate(dep, arr, min_dist, max_dist)
-    dep_country = dep.country
-    arr_country = arr.country
-    airline = generate_airline(dep_country, arr_country)
-    plane, pax = generate_plane(dist, plane)
-    output = {"dep": dep.ICAO, "arr": arr.ICAO, "plane": plane,
-              "dist": dist, "airline": airline, "pax": pax}
+    if min_dist is not None:
+        try:
+            min_dist = int(min_dist)
+        except:
+            status = "error-min_dist"
+    if max_dist is not None:
+        try:
+            max_dist = int(max_dist)
+        except:
+            status = "error-max_dist"
+
+    if status == "ok":
+        dep, arr, dist, status = generate(dep, arr, min_dist, max_dist)
+    else:
+        output = {"status": status}
+        return output
+
+    if status == "ok":
+        dep_country = dep.country
+        arr_country = arr.country
+        airline = generate_airline(dep_country, arr_country)
+        plane, pax, status = generate_plane(dist, plane)
+    else:
+        output = {"status": status}
+        return output
+
+    if status == "ok":
+        output = {"dep": dep.ICAO, "arr": arr.ICAO, "plane": plane,
+                  "dist": dist, "airline": airline, "pax": pax, "status": status}
+    else:
+        output = {"status": status}
+        return output
+
     return output

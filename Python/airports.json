@@ -709,7 +709,7 @@
     {
         "name": "Berlin Sch\u00f6nefeld Airport",
         "country": "Germany",
-        "ICAO": "EDDB, ETBS",
+        "ICAO": "ETBS",
         "lat": 52.37861111111111,
         "lon": 13.520555555555555
     },

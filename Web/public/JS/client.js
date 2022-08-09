@@ -28,10 +28,45 @@ async function request_flight() {
     var data_response = await response.json();
 
     console.log(data_response);
-    document.getElementById("result-dep").innerHTML = data_response.dep;
-    document.getElementById("result-arr").innerHTML = data_response.arr;
-    document.getElementById("result-airline").innerHTML = data_response.airline;
-    document.getElementById("result-plane").innerHTML = data_response.plane;
-    document.getElementById("result-pax").innerHTML = data_response.pax;
-    document.getElementById("result-dist").innerHTML = data_response.dist;
+    switch (data_response.status) {
+        case "ok": {
+            document.getElementById("result-dep").innerHTML = data_response.dep;
+            document.getElementById("result-arr").innerHTML = data_response.arr;
+            document.getElementById("result-airline").innerHTML = data_response.airline;
+            document.getElementById("result-plane").innerHTML = data_response.plane;
+            document.getElementById("result-pax").innerHTML = data_response.pax;
+            document.getElementById("result-dist").innerHTML = data_response.dist;
+            break;
+        }
+        case "error-dep": {
+            const dep_error_el = document.getElementById("error-dep");
+            dep_error_el.innerText = "Airport not in database";
+            dep_error_el.style = "padding: 10px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; margin-top: 15px; margin-bottom: 5px; padding-right: 0px"
+            break;
+        }
+        case "error-arr": {
+            const dep_error_el = document.getElementById("error-arr");
+            dep_error_el.innerText = "Airport not in database";
+            dep_error_el.style = "padding: 10px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; margin-top: 15px; margin-bottom: 5px; padding-right: 0px"
+            break;
+        }
+        case "error-plane": {
+            const dep_error_el = document.getElementById("error-plane");
+            dep_error_el.innerText = "Airplane not in database";
+            dep_error_el.style = "padding: 10px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; margin-top: 15px; margin-bottom: 5px; padding-right: 0px"
+            break;
+        }
+        case "error-min-dist": {
+            const dep_error_el = document.getElementById("error-min-dist");
+            dep_error_el.innerText = "Incorrect input";
+            dep_error_el.style = "padding: 10px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; margin-top: 15px; margin-bottom: 5px; padding-right: 0px"
+            break;
+        }
+        case "error-max-dist": {
+            const dep_error_el = document.getElementById("error-max-dist");
+            dep_error_el.innerText = "Incorrect input";
+            dep_error_el.style = "padding: 10px; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; margin-top: 15px; margin-bottom: 5px; padding-right: 0px"
+            break;
+        }
+    }
 }
