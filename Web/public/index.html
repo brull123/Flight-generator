@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flight Generator</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <script src="JS/client.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Flight Generator</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sub-container">
+            <div class="input-div">
+                <div class="invalid-input" id="error-dep"></div>
+                <label for="dep">Departure ICAO:</label>
+                <input class="user-input" id="dep" type="text" placeholder="Random">
+            </div>
+            <div class="input-div">
+                <div class="invalid-input" id="error-arr"></div>
+                <label for="arr">Arrival ICAO:</label>
+                <input class="user-input" id="arr" type="text" placeholder="Random">
+            </div>
+            <div class="input-div">
+                <div class="invalid-input" id="error-plane"></div>
+                <label for="plane">Airplane:</label>
+                <input class="user-input" id="plane" type="text" placeholder="Random">
+            </div>
+            <div class="input-div">
+                <div class="invalid-input" id="error-min-dist"></div>
+                <label for="min_dist">Minimum distance:</label>
+                <input class="user-input" id="min_dist" type="number" placeholder=100>
+            </div>
+            <div class="input-div">
+                <div class="invalid-input" id="error-max-dist"></div>
+                <label for="max_dist">Maximum distance:</label>
+                <input class="user-input" id="max_dist" type="number" placeholder=300>
+            </div>
+            <div>
+                <button class="buttons" id="generate_button" onclick=request_flight()>Generate</button>
+            </div>
+        </div>
+        <div class="sub-container">
+            <div class="result">
+                <span class="result-label">Departure: </span>
+                <span class="result-value" id="result-dep">LKPR</span>
+            </div>
+            <div class="result">
+                <span class="result-label">Arrival: </span>
+                <span class="result-value" id="result-arr">EBBR</span>
+            </div>
+            <div class="result">
+                <span class="result-label">Airline: </span>
+                <span class="result-value" id="result-airline">CSA</span>
+            </div>
+            <div class="result">
+                <span class="result-label">Plane: </span>
+                <span class="result-value" id="result-plane">B737</span>
+            </div>
+            <div class="result">
+                <span class="result-label">Passengers: </span>
+                <span class="result-value" id="result-pax">136</span>
+            </div>
+            <div class="result">
+                <span class="result-label">Distance: </span>
+                <span class="result-value" id="result-dist">1860 nm</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
